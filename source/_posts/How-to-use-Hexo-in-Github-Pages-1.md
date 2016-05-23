@@ -1,16 +1,18 @@
 ---
 title: How to use Hexo in Github Pages(1)
 date: 2016-05-22 19:36:26
-tags: Hexo, Github
+tags:
+- Hexo
+- Github
 ---
-
+___
 Setup blog generator
 ===
 
 ### 1. Create repositories in Github.
 
-- Create _<yourusername>.github.io_ repository for the Github Pages.
-- Create another repository as the blog generator, I recommend using _<yourusername>.github.io.hexo_ in this case.
+- Create _username.github.io_ repository for the Github Pages.
+- Create another repository as the blog generator, I recommend using _username.github.io.hexo_ in this case.
 
 ### 2. Install Hexo locally
 
@@ -56,14 +58,14 @@ $ vi _config.yml
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/<yourusername>/<yourusername>.github.io.git
+  repo: https://github.com/username/username.github.io.git
   branch: master
 ```
 
 ### 6. Deploy blog to Github Pages!
 
-Now the Hexo could generate the static blog files, and push them to your _<yourusername>.github.io_ repository.
-Open a browser with the URL _<yourusername>.github.io_ to see your Github Pages.
+Now the Hexo could generate the static blog files, and push them to your _username.github.io_ repository.
+Open a browser with the URL _username.github.io_ to see your Github Pages.
 
 ``` bash
 $ hexo clean
@@ -78,6 +80,6 @@ Do not forget to add your Hexo code to Git.
 $ git init
 $ git add ./
 $ git commit -m 'some comments'
-$ git remote add origin https://github.com/<yourusername>/<yourusername>.github.io.hexo.git
+$ git remote add origin https://github.com/username/username.github.io.hexo.git
 $ git push origin master
 ```
