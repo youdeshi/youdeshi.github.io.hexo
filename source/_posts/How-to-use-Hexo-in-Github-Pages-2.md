@@ -34,7 +34,7 @@ $ hexo new page testPage1
 
 No command is needed, you could go to the __source__ folder, then edit/delete the corresponding files.
 
-### 3. Use Block Quote
+#### 2.1. Use Block Quote
 
 Perfect for adding quotes to your post, with optional author, source and title information.
 
@@ -44,15 +44,7 @@ content
 {% endblockquote %}
 ```
 
-As an example, add following to __testPost1__
-
-```
-{% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %}
-Every interaction is both precious and an opportunity to delight.
-{% endblockquote %}
-```
-
-### 4. Use Code Block
+#### 2.2. Use Code Block
 
 Useful feature for adding code snippets to your post.
 
@@ -62,29 +54,46 @@ code snippet
 {% endcodeblock %}
 ```
 
-As an example, add following to __testPost1__
-
-```
-{% codeblock _.compact lang:javascript http://underscorejs.org/#compact Underscore.js %}
-_.compact([0, 1, false, 2, '', 3]);
-=> [1, 2, 3]
-{% endcodeblock %}
-```
-
 Backtick Code Block is identical to using a code block, but instead uses three backticks to delimit the block.
 
 ```
-``` [language] [title] [url] [link text] code snippet ```
+``` [language] [title] [url] [link text] code snippet
 ```
 
-### 5. More Tag Plugins
 
+#### 2.3. More Tag Plugins
 
+Inserts an image with specified size
 
+```
+{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}
+```
 
+Inserts a link with *target="_blank"* attribute.
 
+```
+{% link text url [external] [title] %}
+```
 
+[See More](https://hexo.io/docs/tag-plugins.html)
 
+### 3. Run server to test
 
+To start using the server, you will first have to install _hexo-server_.
 
+``` bash
+$ npm install --save hexo-server
+$ hexo server
+```
 
+Your website will run at http://localhost:4000 by default. Use the _-p_ option to set a different port.
+
+```bash
+$ hexo server -p 8081
+```
+
+### 4. Generate static files and deploy
+
+```bash
+$ hexo generate --deploy
+```
